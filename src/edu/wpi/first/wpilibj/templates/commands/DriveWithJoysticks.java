@@ -1,6 +1,6 @@
 package edu.wpi.first.wpilibj.templates.commands;
 import edu.wpi.first.wpilibj.DriverStationLCD;
-import edu.wpi.first.wpilibj.templates.OI;
+import edu.wpi.first.wpilibj.templates.IO;
 
 
 /**
@@ -32,10 +32,10 @@ public class DriveWithJoysticks extends CommandBase {
         //magnitude uses circle formula to get value between 1.0<->-1.0
         //left direction gets values from 0 degrees to 180degrees, -180degrees to 0 degrees clockwise
         //right speed is joystick axis value between 1.0<->-1.0
-        drivetrain.mecanumDrive_Polar(oi.getLeftMagnitude(), oi.getLeftDirection(), oi.getRightX());
-        DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser5, 1, "Magnitude"+oi.getLeftMagnitude());
-        DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser4, 1, "Direction"+oi.getLeftDirection());
-        DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser3, 1, "RightX"+oi.getRightX());
+        drivetrain.mecanumDrive_Polar(io.getLeftMagnitude(), io.getLeftDirection(), io.getRightX());
+        DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser5, 1, "Magnitude"+io.getLeftMagnitude());
+        DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser4, 1, "Direction"+io.getLeftDirection());
+        DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser3, 1, "RightX"+io.getRightX());
         DriverStationLCD.getInstance().updateLCD();
         //System.out.println("Gyro Angle: "+drivetrain.getAngle());
     }

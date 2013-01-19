@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.templates.commands.LiftUp;*/
  * 
  * @author Alex Henning
  */
-public class OI {
+public class IO {
     // Create the joystick and of the 8 buttons on it
     Joystick leftJoy = new Joystick(1);
     Joystick rightJoy = new Joystick(2);
@@ -32,7 +32,7 @@ public class OI {
     /**
      * Bind the press of each button to a specific command or command group.
      */
-    public OI() {
+    public IO() {
         //button#.whenPressed(new Command());
         button5.whileHeld(new LiftUp());
         button6.whileHeld(new LiftDown());

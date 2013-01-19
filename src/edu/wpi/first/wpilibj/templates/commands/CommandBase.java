@@ -7,7 +7,7 @@ package edu.wpi.first.wpilibj.templates.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.templates.OI;
+import edu.wpi.first.wpilibj.templates.IO;
 import edu.wpi.first.wpilibj.templates.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.templates.subsystems.Lift;
 
@@ -22,8 +22,8 @@ import edu.wpi.first.wpilibj.templates.subsystems.Lift;
  * @author Alex Henning
  */
 public abstract class CommandBase extends Command {
-    // CommandBase holds a static instance of OI
-    public static OI oi;
+    // CommandBase holds a static instance of IO
+    public static IO io;
     
     // Instances of each subsystem
     public static DriveTrain drivetrain = new DriveTrain();
@@ -34,7 +34,7 @@ public abstract class CommandBase extends Command {
      * This call is automatically included in the default template.
      */
     public static void init() {
-        oi = new OI();
+        io = new IO();
         
         // Optional: Logs the currently running command for each subsystem in
         //           the SmartDashboard. This can be useful for debugging.
