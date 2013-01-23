@@ -7,6 +7,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
+import edu.wpi.first.wpilibj.templates.commands.LiftDoNothing;
 
 /**
  *
@@ -21,6 +22,7 @@ public class Lift extends Subsystem{
         lift_Mot = new Jaguar(RobotMap.liftMotor);
     }
     protected void initDefaultCommand() {
+        setDefaultCommand(new LiftDoNothing());
     }
     
     public void liftUP() {
@@ -29,6 +31,10 @@ public class Lift extends Subsystem{
     
     public void liftDOWN() {
         lift_Mot.set(-speed);
+    }
+    
+    public void doNothing() {
+        lift_Mot.set(0);
     }
     
 }
