@@ -34,8 +34,8 @@ public class DriveWithJoysticks extends CommandBase {
         //right speed is joystick axis value between 1.0<->-1.0
         drivetrain.mecanumDrive_Polar(io.getLeftMagnitude(), io.getLeftDirection(), io.getRightX());
         DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser5, 1, "Magnitude"+io.getLeftMagnitude());
-        DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser4, 1, "Direction"+io.getLeftDirection());
-        DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser3, 1, "RightX"+io.getRightX());
+       //DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser4, 1, "Direction"+io.getLeftDirection());
+        //DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser3, 1, "RightX"+io.getRightX());
         DriverStationLCD.getInstance().updateLCD();
         //System.out.println("Gyro Angle: "+drivetrain.getAngle());
     }

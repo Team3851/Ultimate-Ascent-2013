@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.IO;
 import edu.wpi.first.wpilibj.templates.subsystems.DriveTrain;
+import edu.wpi.first.wpilibj.templates.subsystems.Feeder;
 import edu.wpi.first.wpilibj.templates.subsystems.Lift;
 import edu.wpi.first.wpilibj.templates.subsystems.LiftArm;
 
@@ -30,6 +31,7 @@ public abstract class CommandBase extends Command {
     public static DriveTrain drivetrain = new DriveTrain();
     public static Lift lift = new Lift();
     public static LiftArm liftarm = new LiftArm();
+    public static Feeder feeder = new Feeder();
     
     /**
      * Call this command to properly finish initializing the CommandBase.

@@ -24,7 +24,10 @@ public class RobotMap {
             rightMotorB = 4,
             liftMotor = 5,
             liftArmMotor = 6;
-    
+    // Motors: Digital IO ports
+    public static final int
+            feederMotor = 1;
+
     //Sensors
     public static final int
             analogBreakout = 1,

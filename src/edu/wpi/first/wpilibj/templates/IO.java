@@ -3,10 +3,7 @@ package edu.wpi.first.wpilibj.templates;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.templates.commands.LiftArmDeployBack;
-import edu.wpi.first.wpilibj.templates.commands.LiftArmDeployForward;
-import edu.wpi.first.wpilibj.templates.commands.LiftDown;
-import edu.wpi.first.wpilibj.templates.commands.LiftUp;
+import edu.wpi.first.wpilibj.templates.commands.*;
 /*import edu.wpi.first.wpilibj.templates.commands.LiftDown;
 import edu.wpi.first.wpilibj.templates.commands.LiftUp;*/
 
@@ -31,7 +28,8 @@ public class IO {
             buttonL5 = new JoystickButton(leftJoy, 5),
             buttonL6 = new JoystickButton(leftJoy, 6),
             buttonL7 = new JoystickButton(leftJoy, 7),
-            buttonL8 = new JoystickButton(leftJoy, 8);
+            buttonL8 = new JoystickButton(leftJoy, 8),
+            buttonL9 = new JoystickButton(leftJoy, 9);
     
     /**
      * Bind the press of each button to a specific command or command group.
@@ -45,6 +43,16 @@ public class IO {
         //control lift winch
         buttonL5.whileHeld(new LiftUp());
         buttonL6.whileHeld(new LiftDown());
+        
+        //feed frisbees to shooter
+        /*use full rotation, then half, then full after
+         *this loads the first frisbee, creates room for 4 at once, 
+         *full rots after keeps loading 
+         */
+        buttonL2.whenPressed(new FeederFeed());
+        buttonL3.whenPressed(new FeederHalfway());
+        buttonL8.whenPressed(new FeederSubtractTime());
+        buttonL9.whenPressed(new FeederAddTime());
     }
     
     /**
