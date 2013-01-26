@@ -22,7 +22,8 @@ public class RobotMap {
             leftMotorB = 2,
             rightMotorF = 3,
             rightMotorB = 4,
-            liftMotor = 5;
+            liftMotor = 5,
+            liftArmMotor = 6;
     
     //Sensors
     public static final int

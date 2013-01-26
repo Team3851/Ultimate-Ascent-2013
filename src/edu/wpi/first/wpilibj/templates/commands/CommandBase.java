@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.IO;
 import edu.wpi.first.wpilibj.templates.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj.templates.subsystems.Lift;
+import edu.wpi.first.wpilibj.templates.subsystems.LiftArm;
 
 /**
  * <p>The CommandBase class is automatically generated when the project is created.
@@ -28,6 +29,7 @@ public abstract class CommandBase extends Command {
     // Instances of each subsystem
     public static DriveTrain drivetrain = new DriveTrain();
     public static Lift lift = new Lift();
+    public static LiftArm liftarm = new LiftArm();
     
     /**
      * Call this command to properly finish initializing the CommandBase.

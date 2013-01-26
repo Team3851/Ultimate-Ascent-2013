@@ -3,6 +3,8 @@ package edu.wpi.first.wpilibj.templates;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.templates.commands.LiftArmDeployBack;
+import edu.wpi.first.wpilibj.templates.commands.LiftArmDeployForward;
 import edu.wpi.first.wpilibj.templates.commands.LiftDown;
 import edu.wpi.first.wpilibj.templates.commands.LiftUp;
 /*import edu.wpi.first.wpilibj.templates.commands.LiftDown;
@@ -20,22 +22,29 @@ public class IO {
     // Create the joystick and of the 8 buttons on it
     Joystick leftJoy = new Joystick(1);
     Joystick rightJoy = new Joystick(2);
-    Button button1 = new JoystickButton(leftJoy, 1),
-            button2 = new JoystickButton(leftJoy, 2),
-            button3 = new JoystickButton(leftJoy, 3),
-            button4 = new JoystickButton(leftJoy, 4),
-            button5 = new JoystickButton(leftJoy, 5),
-            button6 = new JoystickButton(leftJoy, 6),
-            button7 = new JoystickButton(leftJoy, 7),
-            button8 = new JoystickButton(leftJoy, 8);
+    
+    //left joystick buttons
+    Button buttonL1 = new JoystickButton(leftJoy, 1),
+            buttonL2 = new JoystickButton(leftJoy, 2),
+            buttonL3 = new JoystickButton(leftJoy, 3),
+            buttonL4 = new JoystickButton(leftJoy, 4),
+            buttonL5 = new JoystickButton(leftJoy, 5),
+            buttonL6 = new JoystickButton(leftJoy, 6),
+            buttonL7 = new JoystickButton(leftJoy, 7),
+            buttonL8 = new JoystickButton(leftJoy, 8);
     
     /**
      * Bind the press of each button to a specific command or command group.
      */
     public IO() {
         //button#.whenPressed(new Command());
-        button5.whileHeld(new LiftUp());
-        button6.whileHeld(new LiftDown());
+        //control lift arm
+        buttonL7.whileHeld(new LiftArmDeployForward());
+        buttonL8.whileHeld(new LiftArmDeployBack());
+        
+        //control lift winch
+        buttonL5.whileHeld(new LiftUp());
+        buttonL6.whileHeld(new LiftDown());
     }
     
     /**
