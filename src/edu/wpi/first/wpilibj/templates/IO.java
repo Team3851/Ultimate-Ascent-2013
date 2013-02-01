@@ -1,5 +1,11 @@
 package edu.wpi.first.wpilibj.templates;
 
+import edu.wpi.first.wpilibj.templates.commands.lift.LiftArmDeployForward;
+import edu.wpi.first.wpilibj.templates.commands.lift.LiftArmDeployBack;
+import edu.wpi.first.wpilibj.templates.commands.lift.LiftDown;
+import edu.wpi.first.wpilibj.templates.commands.lift.LiftUp;
+import edu.wpi.first.wpilibj.templates.commands.feeder.FeederFeed;
+import edu.wpi.first.wpilibj.templates.commands.feeder.FeederHalfway;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -16,9 +22,10 @@ import edu.wpi.first.wpilibj.templates.commands.LiftUp;*/
  * @author Alex Henning
  */
 public class IO {
-    // Create the joystick and of the 8 buttons on it
+    // Create the joystick and of the 9 buttons on it
     Joystick leftJoy = new Joystick(1);
     Joystick rightJoy = new Joystick(2);
+    Joystick switchBoard = new Joystick(3);
     
     //left joystick buttons
     Button buttonL1 = new JoystickButton(leftJoy, 1),
@@ -31,6 +38,8 @@ public class IO {
             buttonL8 = new JoystickButton(leftJoy, 8),
             buttonL9 = new JoystickButton(leftJoy, 9);
     
+    Button buttonShooter = new JoystickButton(switchBoard, 1);
+    
     /**
      * Bind the press of each button to a specific command or command group.
      */
@@ -40,9 +49,12 @@ public class IO {
         buttonL7.whileHeld(new LiftArmDeployForward());
         buttonL8.whileHeld(new LiftArmDeployBack());
         
+        
         //control lift winch
         buttonL5.whileHeld(new LiftUp());
         buttonL6.whileHeld(new LiftDown());
+        
+        
         
         //feed frisbees to shooter
         /*use full rotation, then half, then full after
@@ -51,8 +63,6 @@ public class IO {
          */
         buttonL2.whenPressed(new FeederFeed());
         buttonL3.whenPressed(new FeederHalfway());
-        buttonL8.whenPressed(new FeederSubtractTime());
-        buttonL9.whenPressed(new FeederAddTime());
     }
     
     /**

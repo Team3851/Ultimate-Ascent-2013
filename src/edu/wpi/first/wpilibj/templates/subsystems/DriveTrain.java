@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
-import edu.wpi.first.wpilibj.templates.commands.DriveWithJoysticks;
+import edu.wpi.first.wpilibj.templates.commands.drivetrain.DriveWithJoysticks;
 
 /**
  * <p>The drive train is PID subsystem, but unlike the {@link Wrist} and

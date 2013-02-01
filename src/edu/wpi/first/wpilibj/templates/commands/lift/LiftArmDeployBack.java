@@ -2,26 +2,29 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wpi.first.wpilibj.templates.commands;
+package edu.wpi.first.wpilibj.templates.commands.lift;
+
+import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
  *
  * @author 3851
  */
-public class FeederAddTime extends CommandBase{
-    public FeederAddTime() {
+public class LiftArmDeployBack extends CommandBase{
+    
+    public LiftArmDeployBack() {
+        requires(liftarm);
     }
 
     protected void initialize() {
-        feeder.feedRotation=feeder.feedRotation+0.05;
-        feeder.feedHalfRotation=feeder.feedHalfRotation+0.05;
     }
 
     protected void execute() {
+        liftarm.deployBck();
     }
 
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     protected void end() {

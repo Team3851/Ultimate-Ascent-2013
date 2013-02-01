@@ -8,10 +8,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.IO;
-import edu.wpi.first.wpilibj.templates.subsystems.DriveTrain;
-import edu.wpi.first.wpilibj.templates.subsystems.Feeder;
-import edu.wpi.first.wpilibj.templates.subsystems.Lift;
-import edu.wpi.first.wpilibj.templates.subsystems.LiftArm;
+import edu.wpi.first.wpilibj.templates.subsystems.*;
 
 /**
  * <p>The CommandBase class is automatically generated when the project is created.
@@ -32,6 +29,7 @@ public abstract class CommandBase extends Command {
     public static Lift lift = new Lift();
     public static LiftArm liftarm = new LiftArm();
     public static Feeder feeder = new Feeder();
+    public static Shooter shooter = new Shooter();
     
     /**
      * Call this command to properly finish initializing the CommandBase.

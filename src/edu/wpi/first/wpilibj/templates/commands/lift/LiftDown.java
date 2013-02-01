@@ -2,23 +2,25 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wpi.first.wpilibj.templates.commands;
+package edu.wpi.first.wpilibj.templates.commands.lift;
+
+import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
  *
  * @author 3851
  */
-public class LiftArmDeployForward extends CommandBase{
+public class LiftDown extends CommandBase{
     
-    public LiftArmDeployForward() {
-        requires(liftarm);
+    public LiftDown() {
+        requires(lift);
     }
 
     protected void initialize() {
     }
 
     protected void execute() {
-        liftarm.deployFwd();
+        lift.liftDOWN();
     }
 
     protected boolean isFinished() {

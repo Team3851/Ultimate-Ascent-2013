@@ -2,18 +2,19 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wpi.first.wpilibj.templates.commands;
+package edu.wpi.first.wpilibj.templates.commands.feeder;
 
 import edu.wpi.first.wpilibj.DriverStationLCD;
+import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
  *
  * @author 3851
  */
-public class FeederHalfway extends CommandBase{
-    public FeederHalfway() {
+public class FeederFeed extends CommandBase {
+    public FeederFeed() {
         requires(feeder);
-        setTimeout(feeder.feedHalfRotation);
+        setTimeout(feeder.feedRotation);
     }
 
     protected void initialize() {
@@ -21,7 +22,7 @@ public class FeederHalfway extends CommandBase{
 
     protected void execute() {
         feeder.feed();
-        DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser2, 1, "FeedHalfRotation"+feeder.feedHalfRotation);
+        DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser3, 1, "FeedRotation"+feeder.feedRotation);
         DriverStationLCD.getInstance().updateLCD();
     }
 

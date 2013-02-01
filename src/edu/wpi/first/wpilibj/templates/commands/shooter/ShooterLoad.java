@@ -2,27 +2,29 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wpi.first.wpilibj.templates.commands;
+package edu.wpi.first.wpilibj.templates.commands.shooter;
+
+import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
  *
  * @author 3851
  */
-public class FeederSubtractTime extends CommandBase{
-    public FeederSubtractTime() {
+public class ShooterLoad extends CommandBase{
+    public ShooterLoad(double timeout) {
+        requires(shooter);
+        setTimeout(timeout);
     }
 
     protected void initialize() {
-        feeder.feedHalfRotation=feeder.feedHalfRotation-0.05;
-        feeder.feedRotation=feeder.feedRotation-0.05;
     }
 
     protected void execute() {
-        
+        shooter.load();
     }
 
     protected boolean isFinished() {
-        return true;
+        return isTimedOut();
     }
 
     protected void end() {
