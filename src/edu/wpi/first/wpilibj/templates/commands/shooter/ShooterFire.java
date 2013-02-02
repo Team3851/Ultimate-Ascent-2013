@@ -17,7 +17,8 @@ public class ShooterFire extends CommandGroup{
         addParallel(new ShooterRunShooters(5));
         addSequential(new WaitCommand(.4));
         addSequential(new ShooterLoad(1));
-        addSequential(new ShooterReturn(1));
+        addSequential(new ShooterReturn());
+        addSequential(new ShooterDoNothing());
     }
 
     

@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.templates.commands.CommandBase;
  * 
  * <p>Recommended next step: {@link DriveToDistance}
  *
- * @author namadaza
+ * @author 3851
  */
 public class DriveWithJoysticks extends CommandBase {
     /**

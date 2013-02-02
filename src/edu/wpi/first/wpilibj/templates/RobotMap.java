@@ -36,5 +36,8 @@ public class RobotMap {
     public static final int
             analogBreakout = 1,
             gyroChannel = 5;
+    
+    public static final int
+            shooterRetreatSwitch = 1;
     // Additional mappings could be included, but are not used on this robot
 }

@@ -11,9 +11,9 @@ import edu.wpi.first.wpilibj.templates.commands.CommandBase;
  * @author 3851
  */
 public class ShooterReturn extends CommandBase{
-    public ShooterReturn(double timeout) {
+    public ShooterReturn() {
         requires(shooter);
-        setTimeout(timeout);
+        
     }
 
     protected void initialize() {
@@ -23,7 +23,7 @@ public class ShooterReturn extends CommandBase{
     }
 
     protected boolean isFinished() {
-        return isTimedOut();
+        return shooter.isRetreated();
     }
 
     protected void end() {

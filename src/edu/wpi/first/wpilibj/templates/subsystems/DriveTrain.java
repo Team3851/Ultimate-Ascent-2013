@@ -9,14 +9,12 @@ import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import edu.wpi.first.wpilibj.templates.commands.drivetrain.DriveWithJoysticks;
 
 /**
- * <p>The drive train is PID subsystem, but unlike the {@link Wrist} and
- * {@link Elevator}, it is not always running PID. Instead, it can be run in a
- * manual tank drive or PID can be enabled and it will use a range finder to
- * drive a fixed distance away from the target.</p>
+ * Drivetrain subsystem, using polar mecanum drive as of now seeing as how gyro is 
+ * giving wonky values
  * 
- * <p>Recommended next step: {@link CommandBase}</p>
+ * <p>Recommended next step: fix gyro values
  *
- * @author namadaza
+ * @author 3851
  */
 public class DriveTrain extends Subsystem { 
     RobotDrive mec_Drive;
@@ -45,14 +43,19 @@ public class DriveTrain extends Subsystem {
         return driveGyro.getVoltage();
     }*/
     
+    //drive with gyro angle for field-centric drive (needs to be tested)
     public void mecanumDrive_Cartesian(double x, double y, double z, double gyroAngle) {
         mec_Drive.mecanumDrive_Cartesian(x, y, z, gyroAngle);
     }
     
+    //drive without gyro, left is robot's left, regardless of position
+    //relative to driver
     public void mecanumDrive_Polar(double magnitude, double direction, double rotation) {
         mec_Drive.mecanumDrive_Polar(magnitude, direction, rotation);
     }
     
+    
+    //standard tank drive 
     public void basicDrive(double x, double y) {
         mec_Drive.tankDrive(x, y);
     }
