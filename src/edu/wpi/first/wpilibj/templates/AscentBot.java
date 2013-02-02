@@ -9,6 +9,7 @@ package edu.wpi.first.wpilibj.templates;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.camera.AxisCamera;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
@@ -50,12 +51,16 @@ import edu.wpi.first.wpilibj.templates.subsystems.DriveTrain;
 public class AscentBot extends IterativeRobot {
 
     Command autonomousCommand;
+    AxisCamera cam;
 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
+        //instantiate camera
+        cam = AxisCamera.getInstance();
+        cam.writeResolution(AxisCamera.ResolutionT.k160x120);
         // Initialize the CommandBase so that everything is ready to run
         CommandBase.init();
         
