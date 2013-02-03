@@ -58,9 +58,6 @@ public class AscentBot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-        //instantiate camera
-        cam = AxisCamera.getInstance();
-        cam.writeResolution(AxisCamera.ResolutionT.k160x120);
         // Initialize the CommandBase so that everything is ready to run
         CommandBase.init();
         

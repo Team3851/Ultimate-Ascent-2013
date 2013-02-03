@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.templates.commands.*;
+import edu.wpi.first.wpilibj.templates.commands.shooter.ShooterRunShooters;
 /*import edu.wpi.first.wpilibj.templates.commands.LiftDown;
 import edu.wpi.first.wpilibj.templates.commands.LiftUp;*/
 
@@ -36,7 +37,10 @@ public class IO {
             buttonL6 = new JoystickButton(leftJoy, 6),
             buttonL7 = new JoystickButton(leftJoy, 7),
             buttonL8 = new JoystickButton(leftJoy, 8),
-            buttonL9 = new JoystickButton(leftJoy, 9);
+            buttonL9 = new JoystickButton(leftJoy, 9),
+            buttonL10 = new JoystickButton(leftJoy, 10),
+            buttonL11 = new JoystickButton(leftJoy, 11);
+    
     
     Button buttonShooter = new JoystickButton(switchBoard, 1);
     
@@ -54,7 +58,8 @@ public class IO {
         buttonL5.whileHeld(new LiftUp());
         buttonL6.whileHeld(new LiftDown());
         
-        
+        //debug shooter motors
+        buttonL10.whenPressed(new ShooterRunShooters());
         
         //feed frisbees to shooter
         /*use full rotation, then half, then full after

@@ -9,6 +9,8 @@ import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
+import edu.wpi.first.wpilibj.templates.commands.shooter.ShooterDoNothing;
+import edu.wpi.first.wpilibj.templates.commands.shooter.ShooterRunShooters;
 
 /**
  * Shooter assembly: two CIM motors running to fire, relay with window motor to push frisbees
@@ -32,6 +34,7 @@ public class Shooter extends Subsystem{
     }
 
     protected void initDefaultCommand() {
+        setDefaultCommand(new ShooterRunShooters());
     }
     
     //push window motor forward to load frisbee

@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 public class ShooterFire extends CommandGroup{
     public ShooterFire() {
         //run shooter motors, wait for motors to reach full speed, load frisbee (fires), return
-        addParallel(new ShooterRunShooters(5));
+        addParallel(new ShooterRunShooters());
         addSequential(new WaitCommand(.4));
         addSequential(new ShooterLoad(1));
         addSequential(new ShooterReturn());

@@ -1,4 +1,5 @@
 package edu.wpi.first.wpilibj.templates.commands.drivetrain;
+import edu.wpi.first.wpilibj.DriverStationEnhancedIO;
 import edu.wpi.first.wpilibj.DriverStationLCD;
 import edu.wpi.first.wpilibj.templates.IO;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
