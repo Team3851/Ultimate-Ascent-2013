@@ -22,19 +22,19 @@ import edu.wpi.first.wpilibj.templates.commands.shooter.ShooterRunShooters;
  */
 public class Shooter extends Subsystem{
     Relay pusher;
-    Jaguar shooter1;
-    Jaguar shooter2;
+    Relay shooter1;
+    Relay shooter2;
     DigitalInput shooterRetreatSwitch;
     
     public Shooter() {
-        pusher = new Relay(RobotMap.pusherSolenoid);
-        shooter1 = new Jaguar(RobotMap.shooterMotor1);
-        shooter2 = new Jaguar(RobotMap.shooterMotor2);
+        pusher = new Relay(RobotMap.pusherSpike);
+        shooter1 = new Relay(RobotMap.shooterSpike1);
+        shooter2 = new Relay(RobotMap.shooterSpike2);
         shooterRetreatSwitch = new DigitalInput(RobotMap.shooterRetreatSwitch);
     }
 
     protected void initDefaultCommand() {
-        setDefaultCommand(new ShooterRunShooters());
+        setDefaultCommand(new ShooterDoNothing());
     }
     
     //push window motor forward to load frisbee
@@ -50,16 +50,21 @@ public class Shooter extends Subsystem{
         pusher.set(Relay.Value.kReverse);
     }
     
-    public void runShooters() {
-        //run shooter motors
-        shooter1.set(0.70);
-        shooter2.set(1.00);
+    public void pusherDoNothing() {
+        pusher.set(Relay.Value.kOff);
     }
     
-    public void doNothing() {
-        shooter1.set(0.0);
-        shooter2.set(0.0);
+    public void runShooters() {
+        //run shooter motors
+        shooter1.set(Relay.Value.kOn);
+        shooter2.set(Relay.Value.kOn);
     }
+    
+    public void shootersDoNothing() {
+        shooter1.set(Relay.Value.kOff);
+        shooter2.set(Relay.Value.kOff);
+    }
+    
     
     public boolean isRetreated() {
         return shooterRetreatSwitch.get();

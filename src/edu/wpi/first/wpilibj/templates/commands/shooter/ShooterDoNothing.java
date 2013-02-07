@@ -18,7 +18,8 @@ public class ShooterDoNothing extends CommandBase{
     }
 
     protected void execute() {
-        shooter.doNothing();
+        shooter.shootersDoNothing();
+        shooter.pusherDoNothing();
     }
 
     protected boolean isFinished() {

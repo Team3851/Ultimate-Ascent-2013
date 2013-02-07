@@ -13,13 +13,13 @@ import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 public class ShooterReturn extends CommandBase{
     public ShooterReturn() {
         requires(shooter);
-        
     }
 
     protected void initialize() {
     }
 
     protected void execute() {
+        shooter.retreat();
     }
 
     protected boolean isFinished() {
@@ -27,6 +27,7 @@ public class ShooterReturn extends CommandBase{
     }
 
     protected void end() {
+        shooter.pusherDoNothing();
     }
 
     protected void interrupted() {

@@ -29,7 +29,7 @@ public class Feeder extends Subsystem{
             feedHalfRotation = .225;
     
     public Feeder() {
-        feeder_Mot = new Relay(RobotMap.feederMotor);
+        feeder_Mot = new Relay(RobotMap.feederSpike);
     }
     protected void initDefaultCommand() {
         setDefaultCommand(new FeederDoNothing());

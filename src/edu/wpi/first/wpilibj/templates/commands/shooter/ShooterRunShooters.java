@@ -4,7 +4,6 @@
  */
 package edu.wpi.first.wpilibj.templates.commands.shooter;
 
-import edu.wpi.first.wpilibj.DriverStationLCD;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 
 /**
@@ -19,19 +18,14 @@ public class ShooterRunShooters extends CommandBase{
     }
 
     protected void execute() {
-        DriverStationLCD.getInstance().println(DriverStationLCD.Line.kUser5, 1, "isRetreated"+shooter.isRetreated());
-        DriverStationLCD.getInstance().updateLCD();
-        while (shooter.isRetreated()) {
-            shooter.runShooters();
-        }
+        shooter.runShooters();
     }
 
     protected boolean isFinished() {
-        return shooter.isRetreated();
+        return false;
     }
 
     protected void end() {
-        shooter.doNothing();
     }
 
     protected void interrupted() {

@@ -23,14 +23,15 @@ public class RobotMap {
             rightMotorF = 3,
             rightMotorB = 4,
             liftMotor = 5,
-            liftArmMotor = 6,
-            shooterMotor1 = 7,
-            shooterMotor2 = 8;
+            liftArmMotor = 6;
+            
     
     // Relays: Digital IO ports
     public static final int
-            feederMotor = 1,
-            pusherSolenoid = 2;
+            feederSpike = 9,
+            pusherSpike = 10,
+            shooterSpike1 = 7,
+            shooterSpike2 = 8;
 
     //Sensors
     public static final int

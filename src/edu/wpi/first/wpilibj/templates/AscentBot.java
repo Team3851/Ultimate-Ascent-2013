@@ -61,6 +61,7 @@ public class AscentBot extends IterativeRobot {
         // Initialize the CommandBase so that everything is ready to run
         CommandBase.init();
         
+        
         // instantiate the command used for the autonomous period
         // Set it so that it runs the command automatically during 
         // the automous period.
